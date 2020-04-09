@@ -11,7 +11,7 @@ import (
 
 var addCmd = &cobra.Command{
 	Use:   "add",
-	Short: "Lists a",
+	Short: "Adds a new task to the task list",
 	Run: func(cmd *cobra.Command, args []string) {
 		task := strings.Join(args, " ")
 		id, err := db.CreateTask(task)

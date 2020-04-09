@@ -1,4 +1,5 @@
 # gophercises
 A repository for golang exercises.
 
-## CLI task manager
+# app list
+- **cli task manager**,
