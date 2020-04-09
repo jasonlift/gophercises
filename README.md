@@ -2,4 +2,4 @@
 A repository for golang exercises.
 
 # app list
-- **cli task manager**,
+- **cli task manager**
