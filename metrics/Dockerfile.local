@@ -1,0 +1,18 @@
+FROM golang:1.13.5-buster
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y vim telnet
+
+RUN mkdir /app
+WORKDIR /app
+
+# Force the go compiler to use modules 
+ENV GO111MODULE=on
+# Copy `go.mod` for definitions and `go.sum` to invalidate the next layer
+# in case of a change in the dependencies
+COPY go.mod go.sum ./
+# Download dependencies
+RUN go mod download
+
+COPY src/ ./src/
