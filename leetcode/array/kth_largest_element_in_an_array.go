@@ -13,6 +13,48 @@ Input: [3,2,3,1,2,4,5,5,6] and k = 4
 Output: 4
  */
 
+// using quicksort method
 func findKthLargest(nums []int, k int) int {
+	return kQuicksort(&nums, 0, len(nums)-1, k)
+}
 
+func kQuicksort(nums *[]int, l int, r int, k int) int {
+	if l < r {
+		p := partition(nums, l, r)
+		if p == k-1 {
+			return (*nums)[p]
+		}
+
+		if p >= k {
+			kQuicksort(nums, l, p-1, k)
+		} else {
+			kQuicksort(nums, p+1, r, k)
+		}
+	}
+	return (*nums)[k-1] // boundary?
+}
+
+func partition(nums *[]int, l, r int) int {
+	pivot := (*nums)[l]
+	tmp := l
+	for l < r {
+		l++
+		for l <= r && pivot <= (*nums)[l] { //inverted order
+			l++
+		}
+		for pivot > (*nums)[r] {
+			r--
+		}
+
+		if l < r {
+			//swap
+			t := (*nums)[l]
+			(*nums)[l] = (*nums)[r]
+			(*nums)[r] = t
+		}
+	}
+	// this moment, l == r
+	(*nums)[tmp] = (*nums)[r]
+	(*nums)[r] = pivot
+	return r
 }
