@@ -1,9 +1,11 @@
 package array
+
 /*
 Description:
 https://leetcode.com/problems/container-with-most-water/
- */
+*/
 
+// add some comments
 func maxArea(height []int) int {
 	max, start, end := 0, 0, len(height)-1
 	for start < end {

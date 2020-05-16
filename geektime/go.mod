@@ -1,3 +1,3 @@
-module geektime
+module github.com/jasonlift/gophercises/geektime
 
-go 1.13
+go 1.14
