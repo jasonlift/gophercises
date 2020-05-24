@@ -2,6 +2,6 @@ package linked
 
 import "testing"
 
-func TestGivenExample(t *testing.T) {
+func TestMerge2SortedList(t *testing.T) {
 
 }

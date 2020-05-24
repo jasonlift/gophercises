@@ -20,7 +20,7 @@ func findKthLargest(nums []int, k int) int {
 
 func kQuicksort(nums *[]int, l int, r int, k int) int {
 	if l < r {
-		p := partition(nums, l, r)
+		p := kPartition(nums, l, r)
 		if p == k-1 {
 			return (*nums)[p]
 		}
@@ -34,7 +34,7 @@ func kQuicksort(nums *[]int, l int, r int, k int) int {
 	return (*nums)[k-1] // boundary?
 }
 
-func partition(nums *[]int, l, r int) int {
+func kPartition(nums *[]int, l, r int) int {
 	pivot := (*nums)[l]
 	tmp := l
 	for l < r {

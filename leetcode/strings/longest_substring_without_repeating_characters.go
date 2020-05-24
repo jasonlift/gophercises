@@ -11,31 +11,21 @@ func lengthOfLongestSubstring(s string) int {
 		return 0
 	}
 
-	dic := make(map[string]int)
-	longestLength := 1
+	dict := make(map[rune]int)
+	longestLength := 0
 	left := 0
 	for i, c := range s {
-		index, ok := dic[string(c)]
-		if !ok {
-			dic[string(c)] = i
-			if i-left+1 > longestLength {
-				longestLength = i-left+1
+		index, ok := dict[c]
+		if ok && index >= left {
+			if i - left > longestLength {
+				longestLength = i - left
 			}
-		} else {
-			dic[string(c)] = i
-			if index < left {
-				// contains itself
-				if i-left+1 > longestLength {
-					longestLength = i-left+1
-				}
-			} else {
-				// eliminate itself
-				if i-left > longestLength {
-					longestLength = i - left
-				}
-			}
-			left = index+1
+			left = index + 1
 		}
+		dict[c] = i
+	}
+	if len(s) - left > longestLength {
+		longestLength = len(s) - left
 	}
 	return longestLength
 }

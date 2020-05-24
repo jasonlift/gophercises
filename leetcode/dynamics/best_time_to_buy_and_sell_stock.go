@@ -12,23 +12,20 @@ Given an array, find the maximum gap between different index
 不用每次都从开始遍历了
  */
 func maxProfit(prices []int) int {
-	if prices == nil || len(prices) <=1 {
+	if len(prices) == 0 {
 		return 0
 	}
-
-	lowestPrice := prices[0]
-	max := 0
-	i := 1
-	for i < len(prices) {
-		if prices[i] < lowestPrice {
-			lowestPrice = prices[i]
+	lowest, max := prices[0], 0
+	for i := range prices {
+		if i == 0 {
+			continue
 		}
-
-		currProfit := prices[i] - lowestPrice
-		if currProfit > max {
-			max = currProfit
+		if prices[i] < lowest {
+			lowest = prices[i]
 		}
-		i++
+		if prices[i]-lowest > max {
+			max = prices[i]-lowest
+		}
 	}
 	return max
 }
