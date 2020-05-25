@@ -8,6 +8,8 @@ Design an algorithm to find the maximum profit. You may complete as many transac
 Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
  */
 
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/212175/Golang-0-ms-solution-simple-DP-beats-100
+
 func maxProfitII(prices []int) int {
 	if prices == nil || len(prices) <=1 {
 		return 0
