@@ -17,8 +17,8 @@ func TestTwoNumbersUseCases(t *testing.T) {
 	}
 
 	for idx, _ := range l1Table {
-		ll1 := array2LinkedList(l1Table[idx])
-		ll2 := array2LinkedList(l2Table[idx])
+		ll1 := Array2LinkedList(l1Table[idx])
+		ll2 := Array2LinkedList(l2Table[idx])
 		res := addTwoNumbers(ll1, ll2)
 		ok := verifyCorrect(
 			res,

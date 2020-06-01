@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func array2LinkedList(arr []int) *ListNode {
+func Array2LinkedList(arr []int) *ListNode {
 	if arr == nil || len(arr) == 0 {
 		return nil
 	}
@@ -26,7 +26,7 @@ func array2LinkedList(arr []int) *ListNode {
 	return head.Next
 }
 
-func linkedList2Array(l *ListNode) []int {
+func LinkedList2Array(l *ListNode) []int {
 	var res []int
 	for l != nil {
 		res = append(res, l.Val)
@@ -46,16 +46,5 @@ func verifyCorrect(l *ListNode, answer []int) bool {
 		return false
 	}
 	return true
-}
-
-type TreeNode struct {
-	Val int
-	Left *TreeNode
-	Right *TreeNode
-}
-
-func NewTree(arr []int) *TreeNode {
-
-	return nil
 }
 

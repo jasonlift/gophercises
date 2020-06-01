@@ -1,7 +1,7 @@
-package linked
+package btree
 
 /*
-Description:
+104
 https://leetcode.com/problems/maximum-depth-of-binary-tree/
 Example:
 Given binary tree [3,9,20,null,null,15,7],

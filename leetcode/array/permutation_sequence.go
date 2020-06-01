@@ -62,8 +62,8 @@ func seqBacktrack(nums []string, tmp *[]string, haveSeen []bool, pcnt *int, k in
 		if haveSeen[i] {
 			continue
 		}
-		*tmp = append(*tmp, nums[i])
-		haveSeen[i] = true
+		*tmp = append(*tmp, nums[i]) // 和下方对称
+		haveSeen[i] = true // 和下方对称
 		res := seqBacktrack(nums, tmp, haveSeen, pcnt, k)
 		if res != nil {
 			return res

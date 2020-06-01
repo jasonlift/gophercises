@@ -16,7 +16,7 @@ func partition(lists []*ListNode, s int, e int)  *ListNode {
 	if s == e {
 		return lists[s]
 	}
-	if (s < e) {
+	if s < e {
 		mid := (s+e)/2
 		l1 := partition(lists, s, mid)
 		l2 := partition(lists, mid+1, e)

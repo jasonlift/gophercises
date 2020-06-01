@@ -31,7 +31,7 @@ func kQuicksort(nums *[]int, l int, r int, k int) int {
 			kQuicksort(nums, p+1, r, k)
 		}
 	}
-	return (*nums)[k-1] // boundary?
+	return (*nums)[k-1]
 }
 
 func kPartition(nums *[]int, l, r int) int {

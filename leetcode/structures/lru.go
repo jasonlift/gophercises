@@ -22,7 +22,7 @@ type entry struct {
 	value int
 }
 
-func Constructor(capacity int) LRUCache {
+func LRUConstructor(capacity int) LRUCache {
 	return LRUCache{
 		capacity: capacity,
 		dlist: list.New(),
